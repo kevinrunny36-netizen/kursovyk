@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КурсоВик — Студентські роботи будь-якого типу</title>
+<meta name="description" content="Курсові, дипломні, реферати, презентації, креслення. Доступна ціна. Зв'яжемось будь-яким зручним способом.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f5f5f5;color:#222}
+.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)}
+.topbar{background:rgba(232,184,75,0.15);border-bottom:1px solid rgba(232,184,75,0.3);padding:6px 2rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.topbar span{font-size:13px;color:#e8b84b;display:flex;align-items:center;gap:5px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1);flex-wrap:wrap;gap:10px}
+.logo{font-size:20px;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px}
+.nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-link{color:rgba(255,255,255,0.7);font-size:13px;display:flex;align-items:center;gap:5px;text-decoration:none;cursor:pointer;background:none;border:none}
+.nav-btn{background:#e8b84b;color:#1a1a2e;border:none;padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer}
+.hero-body{padding:3rem 2rem 2.5rem;text-align:center}
+.badge{display:inline-block;background:rgba(232,184,75,0.2);color:#e8b84b;border:1px solid rgba(232,184,75,0.4);padding:4px 14px;border-radius:20px;font-size:13px;margin-bottom:1.5rem}
+.hero h1{font-size:34px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:1rem}
+.hero h1 span{color:#e8b84b}
+.hero p{font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:1.5rem;max-width:520px;margin-left:auto;margin-right:auto}
+.guarantees-row{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.g-item{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.8)}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#e8b84b;color:#1a1a2e;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:12px 28px;border-radius:8px;font-size:15px;cursor:pointer}
+.stats{display:flex;justify-content:center;gap:2.5rem;padding:1.5rem 2rem;background:rgba(255,255,255,0.05);flex-wrap:wrap}
+.stat-num{font-size:24px;font-weight:700;color:#e8b84b}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.6);margin-top:2px;text-align:center}
+.ratings-row{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;padding:1rem 2rem;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08)}
+.rating-item{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.7)}
+.stars{color:#e8b84b;font-size:12px}
+.contact-bar{background:#0f3460;padding:1.25rem 2rem;border-top:1px solid rgba(255,255,255,0.08)}
+.contact-bar-inner{max-width:700px;margin:0 auto;text-align:center}
+.contact-bar-label{font-size:13px;color:rgba(255,255,255,0.65);margin-bottom:12px;line-height:1.6}
+.contact-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.msg-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+.msg-tg{background:#0088cc;color:#fff}
+.msg-viber{background:#7360f2;color:#fff}
+.msg-wa{background:#25d366;color:#fff}
+.msg-signal{background:#3a76f0;color:#fff}
+section{padding:2.5rem 1.5rem}
+.section-title{text-align:center;font-size:22px;font-weight:700;margin-bottom:0.5rem}
+.section-sub{text-align:center;font-size:14px;color:#666;margin-bottom:2rem}
+.types-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;max-width:760px;margin:0 auto 2rem}
+.type-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1rem;text-align:center;cursor:pointer;transition:border-color 0.2s}
+.type-card:hover,.type-card.active{border:2px solid #e8b84b}
+.type-card i{font-size:22px;color:#e8b84b;margin-bottom:6px;display:block}
+.type-card .type-name{font-size:13px;font-weight:700;line-height:1.4}
+.type-price{font-size:12px;color:#3B6D11;margin-top:4px;font-weight:700}
+.approach-section{background:linear-gradient(135deg,#0f3460 0%,#16213e 100%);padding:3rem 1.5rem}
+.approach-inner{max-width:700px;margin:0 auto}
+.approach-badge{display:inline-block;background:rgba(232,184,75,0.2);color:#e8b84b;border:1px solid rgba(232,184,75,0.4);padding:4px 14px;border-radius:20px;font-size:13px;margin-bottom:1rem}
+.approach-title{font-size:22px;font-weight:700;color:#fff;margin-bottom:0.75rem;text-align:center}
+.approach-lead{font-size:15px;color:rgba(255,255,255,0.75);text-align:center;margin-bottom:2rem;line-height:1.7;max-width:560px;margin-left:auto;margin-right:auto}
+.approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.approach-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:1.25rem}
+.approach-card i{font-size:22px;color:#e8b84b;margin-bottom:8px;display:block}
+.approach-card h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
+.approach-card p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6}
+.defense-section{background:linear-gradient(135deg,#1a1a2e,#0f3460);padding:3rem 1.5rem}
+.defense-inner{max-width:680px;margin:0 auto;text-align:center}
+.defense-icon{font-size:48px;color:#e8b84b;margin-bottom:1rem;display:block}
+.defense-title{font-size:22px;font-weight:700;color:#fff;margin-bottom:0.75rem}
+.defense-lead{font-size:15px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto}
+.defense-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:2rem}
+.defense-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:1.25rem;text-align:left}
+.defense-card i{font-size:20px;color:#e8b84b;margin-bottom:8px;display:block}
+.defense-card h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:5px}
+.defense-card p{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5}
+.defense-cta{display:inline-flex;align-items:center;gap:8px;background:#e8b84b;color:#1a1a2e;border:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer}
+.guarantees-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:760px;margin:0 auto}
+.g-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1.25rem;display:flex;gap:12px;align-items:flex-start}
+.g-card i{font-size:24px;color:#e8b84b;flex-shrink:0;margin-top:2px}
+.g-card h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.g-card p{font-size:13px;color:#666;line-height:1.5}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;max-width:780px;margin:0 auto}
+.review-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1.25rem}
+.review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.avatar{width:38px;height:38px;border-radius:50%;background:#e8b84b;color:#1a1a2e;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.review-name{font-size:14px;font-weight:700}
+.review-stars{color:#e8b84b;font-size:12px}
+.review-text{font-size:13px;color:#555;line-height:1.6}
+.review-date{font-size:11px;color:#999;margin-top:8px}
+.faq-list{max-width:640px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid #e0e0e0;border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:1rem 1.25rem;font-size:14px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q i{font-size:16px;color:#999;transition:transform 0.2s}
+.faq-q.open i{transform:rotate(180deg)}
+.faq-a{font-size:13px;color:#555;line-height:1.6;padding:0 1.25rem 1rem;display:none}
+.faq-a.show{display:block}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;max-width:720px;margin:0 auto}
+.step-card{text-align:center;padding:1.25rem;background:#fff;border:1px solid #e0e0e0;border-radius:12px}
+.step-num{width:34px;height:34px;border-radius:50%;background:#e8b84b;color:#1a1a2e;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.step-card h4{font-size:13px;font-weight:700;margin-bottom:5px}
+.step-card p{font-size:12px;color:#666;line-height:1.5}
+.order-section{background:#fff;border-radius:12px;border:1px solid #e0e0e0;max-width:540px;margin:0 auto;padding:2rem}
+.order-section h3{font-size:18px;font-weight:700;margin-bottom:0.5rem;text-align:center}
+.order-sub{font-size:13px;color:#666;text-align:center;margin-bottom:1.5rem;line-height:1.6}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:13px;color:#555;margin-bottom:6px;font-weight:700}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;background:#f9f9f9;color:#222;font-family:Arial,sans-serif}
+.form-group textarea{resize:vertical;min-height:70px}
+.messenger-select{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.ms-option{padding:8px 4px;border:1px solid #ddd;border-radius:8px;font-size:12px;text-align:center;cursor:pointer;background:#f9f9f9;color:#555;transition:all 0.15s}
+.ms-option.selected{border-color:#e8b84b;color:#222;background:#fff;font-weight:700}
+.ms-option i{display:block;font-size:18px;margin-bottom:3px}
+.submit-btn{width:100%;background:#e8b84b;color:#1a1a2e;border:none;padding:14px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:0.5rem}
+.trust-row{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:1rem}
+.trust-item{font-size:12px;color:#666;display:flex;align-items:center;gap:4px}
+.trust-item i{color:#3B6D11}
+.chat-bubble{position:fixed;bottom:24px;right:24px;background:#0088cc;color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;z-index:99;text-decoration:none}
+.success-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:999}
+.success-box{background:#fff;border-radius:12px;padding:2rem;text-align:center;max-width:320px}
+.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;max-width:660px;margin:0 auto 1.5rem}
+.contact-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1.25rem;text-align:center;text-decoration:none;color:#222}
+.contact-card i{font-size:28px;display:block;margin-bottom:8px}
+.contact-card h4{font-size:13px;font-weight:700;margin-bottom:3px}
+.contact-card p{font-size:12px;color:#666}
+footer{background:#1a1a2e;color:rgba(255,255,255,0.6);padding:2rem;font-size:13px}
+.footer-inner{max-width:700px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between}
+.footer-col h4{color:rgba(255,255,255,0.9);font-size:14px;font-weight:700;margin-bottom:10px}
+.footer-col a{display:block;color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:6px;text-decoration:none}
+.footer-bottom{text-align:center;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:rgba(255,255,255,0.4)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="topbar">
+    <span><i class="ti ti-clock"></i> Пн–Нд: 9:00–23:00</span>
+    <span><i class="ti ti-message-circle"></i> Відповідь за 15 хвилин</span>
+    <span><i class="ti ti-shield-check"></i> Безкоштовні правки 30 днів</span>
+  </div>
+  <nav class="nav">
+    <div class="logo"><i class="ti ti-pencil"></i> КурсоВик</div>
+    <div class="nav-right">
+      <button class="nav-link" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"><i class="ti ti-message-circle"></i> Зв'язатись</button>
+      <button class="nav-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Замовити роботу</button>
+    </div>
+  </nav>
+  <div class="hero-body">
+    <div class="badge"><i class="ti ti-bolt"></i> Швидко · Якісно · Доступна ціна</div>
+    <h1>Студентські роботи<br><span>будь-якого типу</span></h1>
+    <p>Курсові, дипломні, презентації, креслення та багато іншого. Подайте заявку — ми зв'яжемось будь-яким зручним для вас способом.</p>
+    <div class="guarantees-row">
+      <span class="g-item">✓ Унікальність гарантуємо</span>
+      <span class="g-item">✓ Оплата після узгодження</span>
+      <span class="g-item">✓ Безкоштовні правки</span>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">🚀 Подати заявку</button>
+      <button class="btn-secondary" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">Написати напряму →</button>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">виконаних робіт</div></div>
+    <div class="stat-item"><div class="stat-num">98%</div><div class="stat-label">задоволених клієнтів</div></div>
+    <div class="stat-item"><div class="stat-num">30 днів</div><div class="stat-label">безкоштовні правки</div></div>
+    <div class="stat-item"><div class="stat-num">Доступно</div><div class="stat-label">ціни для студентів</div></div>
+  </div>
+  <div class="ratings-row">
+    <span class="rating-item"><span class="stars">★★★★★</span> Google (4.8)</span>
+    <span class="rating-item"><span class="stars">★★★★★</span> Відгуки клієнтів (4.9)</span>
+    <span class="rating-item">🏆 №1 серед студентів</span>
+  </div>
+  <div class="contact-bar">
+    <div class="contact-bar-inner">
+      <div class="contact-bar-label">Або напишіть нам напряму — <strong style="color:#e8b84b">відповімо в будь-якому месенджері</strong></div>
+      <div class="contact-btns">
+        <a class="msg-btn msg-tg" href="https://t.me/+380682362733" target="_blank"><i class="ti ti-brand-telegram"></i> Telegram</a>
+        <a class="msg-btn msg-viber" href="viber://chat?number=%2B380682362733"><i class="ti ti-phone-call"></i> Viber</a>
+        <a class="msg-btn msg-wa" href="https://wa.me/380682362733" target="_blank"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+        <a class="msg-btn msg-signal" href="https://signal.me/#p/+380682362733" target="_blank"><i class="ti ti-lock"></i> Signal</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="types" style="background:#f0f0f0">
+  <div class="section-title">Які роботи ми виконуємо</div>
+  <div class="section-sub">Оберіть тип — і подайте заявку</div>
+  <div class="types-grid">
+    <div class="type-card active" onclick="selectType(this,'Курсова робота')"><i class="ti ti-book"></i><div class="type-name">Курсова робота</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Реферат')"><i class="ti ti-file-text"></i><div class="type-name">Реферат</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Дипломна робота')"><i class="ti ti-certificate"></i><div class="type-name">Дипломна робота</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Контрольна робота')"><i class="ti ti-checklist"></i><div class="type-name">Контрольна робота</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Есе')"><i class="ti ti-writing"></i><div class="type-name">Есе</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Лабораторна робота')"><i class="ti ti-flask"></i><div class="type-name">Лабораторна робота</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Презентація')"><i class="ti ti-presentation"></i><div class="type-name">Презентація</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Таблиці / Excel')"><i class="ti ti-table"></i><div class="type-name">Таблиці / Excel</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Креслення')"><i class="ti ti-ruler-2"></i><div class="type-name">Креслення</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Наукова стаття')"><i class="ti ti-microscope"></i><div class="type-name">Наукова стаття</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Кваліфікаційна робота')"><i class="ti ti-award"></i><div class="type-name">Кваліфікаційна робота</div><div class="type-price">💛 Доступна ціна</div></div>
+    <div class="type-card" onclick="selectType(this,'Практична робота')"><i class="ti ti-tools"></i><div class="type-name">Практична робота</div><div class="type-price">💛 Доступна ціна</div></div>
+  </div>
+  <div style="text-align:center"><button class="btn-primary" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Подати заявку →</button></div>
+</section>
+
+<div class="approach-section">
+  <div class="approach-inner">
+    <div style="text-align:center"><div class="approach-badge"><i class="ti ti-user-check"></i> Індивідуальний підхід</div></div>
+    <div class="approach-title">Ми не робимо роботи «під копірку»</div>
+    <p class="approach-lead">Кожне замовлення — це окрема історія. Ваш університет, ваш науковий керівник, ваші вимоги. Ми починаємо не з написання, а з розуміння — що саме потрібно саме вам.</p>
+    <div class="approach-grid">
+      <div class="approach-card"><i class="ti ti-message-circle"></i><h4>Глибоке занурення в завдання</h4><p>Перед стартом уточнюємо кожну деталь — методичку, вимоги кафедри, стиль оформлення.</p></div>
+      <div class="approach-card"><i class="ti ti-adjustments"></i><h4>Під вашого викладача</h4><p>Особливі побажання наукового керівника врахуємо з першої сторінки, а не після зауважень.</p></div>
+      <div class="approach-card"><i class="ti ti-repeat"></i><h4>Правки без обмежень</h4><p>Не влаштував результат — скажіть що саме. Доопрацьовуємо до тих пір, поки ви не задоволені.</p></div>
+      <div class="approach-card"><i class="ti ti-eye"></i><h4>Ви контролюєте процес</h4><p>На кожному етапі ви в курсі. Можете переглянути частину роботи до фінальної оплати.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="defense-section">
+  <div class="defense-inner">
+    <i class="ti ti-shield-star defense-icon"></i>
+    <div class="defense-title">Здаєте чи захищаєте — ми поруч до останньої хвилини</div>
+    <p class="defense-lead">Більшість сервісів зникають після того, як передали файл. Ми — ні. Якщо на етапі здачі або захисту виникли питання — пишіть або телефонуйте. Миттєво реагуємо.</p>
+    <div class="defense-cards">
+      <div class="defense-card"><i class="ti ti-edit"></i><h4>Зауваження від викладача</h4><p>Отримали правки — надсилайте нам. Вносимо зміни в пріоритетному порядку.</p></div>
+      <div class="defense-card"><i class="ti ti-podium"></i><h4>Підготовка до захисту</h4><p>Допоможемо підготувати доповідь і відповіді на типові запитання комісії.</p></div>
+      <div class="defense-card"><i class="ti ti-clock-bolt"></i><h4>Термінові виправлення</h4><p>День здачі, а щось треба переробити? Беремося навіть коли час рахується на години.</p></div>
+      <div class="defense-card"><i class="ti ti-message-circle"></i><h4>На зв'язку завжди</h4><p>Telegram, Viber, WhatsApp, Signal або телефон — не кидаємо після оплати.</p></div>
+    </div>
+    <button class="defense-cta" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+      <i class="ti ti-file-plus"></i> Подати заявку зараз
+    </button>
+  </div>
+</div>
+
+<section>
+  <div class="section-title">Наші гарантії</div>
+  <div class="section-sub">Ми дбаємо про ваш результат</div>
+  <div class="guarantees-grid">
+    <div class="g-card"><i class="ti ti-shield-check"></i><div><h4>Унікальність</h4><p>Перевіряємо кожну роботу перед здачею. Звіт унікальності включено.</p></div></div>
+    <div class="g-card"><i class="ti ti-refresh"></i><div><h4>Правки 30 днів</h4><p>Безкоштовно вносимо правки протягом 30 днів після отримання роботи.</p></div></div>
+    <div class="g-card"><i class="ti ti-credit-card"></i><div><h4>Оплата після узгодження</h4><p>Спочатку обговорюємо деталі та ціну — потім оплата. Ніяких сюрпризів.</p></div></div>
+    <div class="g-card"><i class="ti ti-clock"></i><div><h4>Дотримання дедлайну</h4><p>Завжди вкладаємось у строки. Термінові роботи — окремий пріоритет.</p></div></div>
+    <div class="g-card"><i class="ti ti-lock"></i><div><h4>Конфіденційність</h4><p>Ваші дані та замовлення залишаються повністю приватними.</p></div></div>
+    <div class="g-card"><i class="ti ti-headset"></i><div><h4>Підтримка 7 днів на тиждень</h4><p>Відповідаємо щодня 9:00–23:00. На зв'язку в будь-якому месенджері.</p></div></div>
+  </div>
+</section>
+
+<section style="background:#f0f0f0">
+  <div class="section-title">Як це працює</div>
+  <div class="section-sub">Від заявки до готової роботи — просто</div>
+  <div class="steps-grid">
+    <div class="step-card"><div class="step-num">1</div><h4>Подайте заявку</h4><p>Оберіть тип роботи і заповніть форму</p></div>
+    <div class="step-card"><div class="step-num">2</div><h4>Ми зв'яжемось</h4><p>Зателефонуємо або напишемо в обраний месенджер</p></div>
+    <div class="step-card"><div class="step-num">3</div><h4>Уточнюємо деталі</h4><p>Погоджуємо ціну, строки та вимоги</p></div>
+    <div class="step-card"><div class="step-num">4</div><h4>Виконання</h4><p>Готуємо роботу швидко та якісно</p></div>
+    <div class="step-card"><div class="step-num">5</div><h4>Ви отримуєте</h4><p>Файл у потрібному форматі + ми на зв'язку</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Відгуки студентів</div>
+  <div class="section-sub">Реальні відгуки наших клієнтів</div>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="review-header"><div class="avatar">АМ</div><div><div class="review-name">Аліна М.</div><div class="review-stars">★★★★★</div></div></div><div class="review-text">Замовляла курсову з менеджменту. Все зроблено вчасно, унікальність 87%. Викладач прийняла без зауважень!</div><div class="review-date">Квітень 2026 · Курсова робота</div></div>
+    <div class="review-card"><div class="review-header"><div class="avatar" style="background:#0f3460;color:#e8b84b">ДК</div><div><div class="review-name">Дмитро К.</div><div class="review-stars">★★★★★</div></div></div><div class="review-text">Після здачі викладач попросив додати розділ — написав хлопцям і вже через 2 години все було готово. Це підхід!</div><div class="review-date">Березень 2026 · Реферат + Презентація</div></div>
+    <div class="review-card"><div class="review-header"><div class="avatar" style="background:#16213e;color:#e8b84b">ОП</div><div><div class="review-name">Оксана П.</div><div class="review-stars">★★★★★</div></div></div><div class="review-text">Дипломна на відмінно! Допомогли підготуватися до захисту — підказали відповіді на можливі запитання комісії.</div><div class="review-date">Травень 2026 · Дипломна робота</div></div>
+    <div class="review-card"><div class="review-header"><div class="avatar" style="background:#3B6D11;color:#fff">ВС</div><div><div class="review-name">Василь С.</div><div class="review-stars">★★★★★</div></div></div><div class="review-text">Термінова контрольна за 1 день — зробили! Ціна дуже доступна для студента. Буду звертатись ще.</div><div class="review-date">Лютий 2026 · Контрольна робота</div></div>
+  </div>
+</section>
+
+<section style="background:#f0f0f0">
+  <div class="section-title">Часті запитання</div>
+  <div class="section-sub">Відповіді на популярні питання</div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Скільки часу займає виконання роботи? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Залежить від типу та обсягу. Реферат — від кількох годин. Курсова — від 1 дня. Дипломна — від 3 днів. Термінові замовлення обговорюються індивідуально.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Як відбувається оплата? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Спочатку обговорюємо деталі та погоджуємо ціну. Оплата після узгодження умов. Ніяких передплат наосліп.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Яка гарантія унікальності? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Кожна робота перевіряється перед здачею. Звіт унікальності надається разом із готовою роботою. Мінімальний рівень — 70%.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Як ви зі мною зв'яжетесь після заявки? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Після отримання заявки ми зателефонуємо або напишемо в той месенджер, який ви вкажете у формі. Обираєте ви — ми підлаштовуємось.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Чи допомагаєте після здачі роботи? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Так, і це наша принципова відмінність. Якщо виникли зауваження або потрібна підготовка до захисту — пишіть або телефонуйте. Ми на зв'язку.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Чи можна замовити термінову роботу? <i class="ti ti-chevron-down"></i></div><div class="faq-a">Так! Подайте заявку або напишіть напряму — обговоримо можливість і строки. Термінові замовлення виконуємо в пріоритеті.</div></div>
+  </div>
+</section>
+
+<section id="order" style="position:relative">
+  <div class="section-title">Подати заявку</div>
+  <div class="section-sub">Заповніть форму — ми зв'яжемось зручним для вас способом</div>
+  <div class="order-section">
+    <h3>📋 Форма заявки</h3>
+    <p class="order-sub">Після заявки ми зателефонуємо або напишемо в обраний месенджер — уточнимо деталі та погодимо ціну</p>
+    <div class="form-group"><label>Ваше ім'я</label><input type="text" id="f_name" placeholder="Як до вас звертатись?"></div>
+    <div class="form-group"><label>Тип роботи</label>
+      <select id="f_type">
+        <option>Курсова робота</option><option>Реферат</option><option>Дипломна робота</option>
+        <option>Контрольна робота</option><option>Есе</option><option>Лабораторна робота</option>
+        <option>Презентація</option><option>Таблиці / Excel</option><option>Креслення</option>
+        <option>Наукова стаття</option><option>Кваліфікаційна робота</option><option>Практична робота</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Тема роботи (якщо відома)</label><input type="text" id="f_topic" placeholder="Наприклад: Маркетинг в соцмережах"></div>
+    <div class="form-group"><label>Ваш номер телефону</label><input type="text" id="f_contact" placeholder="+380..."></div>
+    <div class="form-group">
+      <label>Як з вами зв'язатись?</label>
+      <div class="messenger-select">
+        <div class="ms-option selected" id="ms_phone" onclick="selectMs('phone')"><i class="ti ti-phone"></i>Телефон</div>
+        <div class="ms-option" id="ms_tg" onclick="selectMs('tg')"><i class="ti ti-brand-telegram"></i>Telegram</div>
+        <div class="ms-option" id="ms_viber" onclick="selectMs('viber')"><i class="ti ti-phone-call"></i>Viber</div>
+        <div class="ms-option" id="ms_wa" onclick="selectMs('wa')"><i class="ti ti-brand-whatsapp"></i>WhatsApp</div>
+        <div class="ms-option" id="ms_signal" onclick="selectMs('signal')"><i class="ti ti-lock"></i>Signal</div>
+        <div class="ms-option" id="ms_any" onclick="selectMs('any')"><i class="ti ti-star"></i>Будь-який</div>
+      </div>
+    </div>
+    <div class="form-group"><label>Дедлайн</label><input type="date" id="f_deadline"></div>
+    <div class="form-group"><label>Додаткові побажання</label><textarea id="f_notes" placeholder="Кількість сторінок, особливі вимоги, методичка..."></textarea></div>
+    <button class="submit-btn" onclick="submitOrder()">🚀 Подати заявку</button>
+    <div class="trust-row">
+      <span class="trust-item"><i class="ti ti-check"></i> Безкоштовні правки</span>
+      <span class="trust-item"><i class="ti ti-check"></i> Оплата після узгодження</span>
+      <span class="trust-item"><i class="ti ti-check"></i> На зв'язку до захисту</span>
+    </div>
+  </div>
+  <div class="success-wrap" id="successModal">
+    <div class="success-box">
+      <div style="font-size:48px;color:#3B6D11;margin-bottom:12px">✅</div>
+      <h3 style="font-size:17px;font-weight:700;margin-bottom:8px">Заявку подано!</h3>
+      <p style="font-size:13px;color:#666;line-height:1.6">Ми зв'яжемось з вами протягом 15 хвилин зручним для вас способом.</p>
+      <button onclick="document.getElementById('successModal').style.display='none'" style="margin-top:1rem;background:#e8b84b;color:#1a1a2e;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700">OK</button>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" style="background:#f0f0f0">
+  <div class="section-title">Зв'язатись напряму</div>
+  <div class="section-sub">Не хочете чекати — напишіть або зателефонуйте прямо зараз</div>
+  <div class="contacts-grid">
+    <a href="https://t.me/+380682362733" target="_blank" class="contact-card"><i class="ti ti-brand-telegram" style="color:#0088cc"></i><h4>Telegram</h4></a>
+    <a href="viber://chat?number=%2B380682362733" class="contact-card"><i class="ti ti-phone-call" style="color:#7360f2"></i><h4>Viber</h4></a>
+    <a href="https://wa.me/380682362733" target="_blank" class="contact-card"><i class="ti ti-brand-whatsapp" style="color:#25d366"></i><h4>WhatsApp</h4></a>
+    <a href="https://signal.me/#p/+380682362733" target="_blank" class="contact-card"><i class="ti ti-lock" style="color:#3a76f0"></i><h4>Signal</h4></a>
+    <a href="tel:+380682362733" class="contact-card"><i class="ti ti-phone" style="color:#e8b84b"></i><h4>Телефон</h4><p>+38 068 236 27 33</p></a>
+  </div>
+  <p style="text-align:center;font-size:14px;color:#666">Працюємо <strong>Пн–Нд з 9:00 до 23:00</strong> · Відповідь протягом 15 хвилин</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>✏️ КурсоВик</h4>
+      <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:200px">Допомога студентам у виконанні робіт будь-якого типу. З нами — від заявки до захисту.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Послуги</h4>
+      <a href="#types">Курсова робота</a>
+      <a href="#types">Реферат</a>
+      <a href="#types">Дипломна робота</a>
+      <a href="#types">Презентація</a>
+      <a href="#types">Креслення</a>
+    </div>
+    <div class="footer-col">
+      <h4>Зв'язатись</h4>
+      <a href="https://t.me/+380682362733" target="_blank">Telegram</a>
+      <a href="viber://chat?number=%2B380682362733">Viber</a>
+      <a href="https://wa.me/380682362733" target="_blank">WhatsApp</a>
+      <a href="https://signal.me/#p/+380682362733" target="_blank">Signal</a>
+      <a href="tel:+380682362733">+38 068 236 27 33</a>
+      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px">Пн–Нд: 9:00–23:00</p>
+    </div>
+  </div>
+  <div class="footer-bottom">КурсоВик © 2026 · Консультаційні послуги. Студент несе відповідальність за використання матеріалу.</div>
+</footer>
+
+<a class="chat-bubble" href="https://t.me/+380682362733" target="_blank" title="Написати в Telegram"><i class="ti ti-brand-telegram"></i></a>
+
+<script>
+var selType='Курсова робота';
+var selMs='phone';
+var msLabels={phone:'телефон',tg:'Telegram',viber:'Viber',wa:'WhatsApp',signal:'Signal',any:'будь-який зручний спосіб'};
+function selectType(el,type){
+  document.querySelectorAll('.type-card').forEach(function(c){c.classList.remove('active')});
+  el.classList.add('active');selType=type;
+  document.getElementById('f_type').value=type;
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+function selectMs(ms){
+  document.querySelectorAll('.ms-option').forEach(function(o){o.classList.remove('selected')});
+  document.getElementById('ms_'+ms).classList.add('selected');
+  selMs=ms;
+}
+function toggleFaq(el){
+  var ans=el.nextElementSibling;
+  var isOpen=ans.classList.contains('show');
+  document.querySelectorAll('.faq-a').forEach(function(a){a.classList.remove('show')});
+  document.querySelectorAll('.faq-q').forEach(function(q){q.classList.remove('open')});
+  if(!isOpen){ans.classList.add('show');el.classList.add('open');}
+}
+function submitOrder(){
+  var contact=document.getElementById('f_contact').value.trim();
+  if(!contact){alert('Будь ласка, вкажіть номер телефону');return;}
+  var name=document.getElementById('f_name').value.trim();
+  var type=document.getElementById('f_type').value;
+  var topic=document.getElementById('f_topic').value.trim();
+  var deadline=document.getElementById('f_deadline').value;
+  var notes=document.getElementById('f_notes').value.trim();
+  var msg='🎓 Нова заявка!\n\n';
+  msg+='👤 Імя: '+(name||'не вказано')+'\n';
+  msg+='📚 Тип: '+type+'\n';
+  msg+='📝 Тема: '+(topic||'не вказана')+'\n';
+  msg+='📞 Телефон: '+contact+'\n';
+  msg+='💬 Звязок: '+msLabels[selMs]+'\n';
+  msg+='⏰ Дедлайн: '+(deadline||'не вказано')+'\n';
+  msg+='📋 Побажання: '+(notes||'—');
+  var url='https://t.me/+380682362733?text='+encodeURIComponent(msg);
+  window.open(url,'_blank');
+  document.getElementById('successModal').style.display='flex';
+}
+</script>
+</body>
+</html>
